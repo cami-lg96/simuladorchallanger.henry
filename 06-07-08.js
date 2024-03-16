@@ -11,6 +11,10 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+      this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
 
     }
 
@@ -20,6 +24,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.amigos.push({ nombre: nombre, edad: edad });
 
     }
 
@@ -28,6 +33,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+        this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -38,7 +44,9 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
+      return this.amigos.map(function(amigo) {
+        return amigo.nombre;
+      });
     }
 
     getHobbies() {
@@ -47,8 +55,9 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+      return this.hobbies;
 
-    }
+      }
 
     getPromedioEdad() {
       // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
@@ -66,8 +75,13 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
-
+      var sumaEdades = 0;
+      for (var amigo of this.amigos) {
+        sumaEdades += amigo.edad;
+      }
+      return sumaEdades / this.amigos.length;
     }
+    
   };
 
   return Persona;

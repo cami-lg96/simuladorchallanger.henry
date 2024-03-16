@@ -10,8 +10,15 @@ function stringMasLarga(strings) {
   // Ej:
   // stringMasLarga(['hi', 'hello', 'ni hao', 'guten tag']); debe retornar 'guten tag'
   // stringMasLarga(['JavaScript', 'HTML', 'CSS']); debe retornar 'JavaScript'
-
-  // Tu código aca
+  // Tu código aca:
+     
+    var longitudMaxima = 0;
+    var stringMasLargo = '';
+     for (var i = 0; i < strings.length; i++) {
+         if (strings[i].length > longitudMaxima) {
+             longitudMaxima = strings[i].length;
+             stringMasLargo = strings[i];}}
+     return stringMasLargo;
 }
 
 // No modifiques nada debajo de esta linea //
